@@ -1,0 +1,151 @@
+.card-check-list {
+    margin-bottom: 24px;
+    .add-btn {
+        @include transRoundBorder;
+        font-size: 14px;
+        background-color: rgba(9, 30, 66, 0.04);
+        font-family: roboto-normal;
+        color: #172b4d;
+        padding: 6px 12px;
+        margin: 8px 0 20px 32px;
+
+        &:hover {
+            background-color: rgba(9, 30, 66, 0.08);
+        }
+    }
+
+    .checklist-title-container {
+        margin-bottom: 12px;
+
+        .checklist-icon {
+            margin-right: 3px;
+            position: relative;
+            bottom: 4px;
+        }
+
+        .checklist-title {
+            @include transRoundBorder;
+            color: #172b4d;
+            background-color: inherit;
+            font-family: roboto-normal;
+            margin: 0 0 4px 4px;
+            padding: 4px;
+            font-size: 18px;
+
+            &:focus {
+                background-color: #fff;
+                outline: none;
+                @include trelloInput;
+                margin: 0 0 4px 4px;
+                padding: 4px;
+            }
+        }
+    }
+
+    .add-item {
+        margin-left: 35px;
+
+        input {
+            @include trelloInput;
+            width: unset;
+            font-family: roboto-normal;
+            font-size: 14px;
+            color: #42526e;
+        }
+
+        button {
+            @include transRoundBorder;
+            font-size: 14px;
+            background-color: #5aac44;
+            color: #fff;
+            padding: 6px 12px;
+            transition: background-color 0.2s;
+            margin-left: 6px;
+            position: relative;
+            bottom: 3px;
+
+            &:hover {
+                background-color: #61bd4f;
+            }
+        }
+    }
+}
+
+.check-list-header-container {
+    margin-left: 36px;
+}
+
+// progress bar
+.progress-bar-section {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-left: 8px;
+}
+
+.progress-bar-container {
+    height: 8px;
+    margin-bottom: 12px;
+    border-radius: 20px;
+    color: #000;
+    background-color: #ccc;
+    margin-left: 26px;
+
+    .progress-bar {
+        transition: width 0.4s;
+        height: 8px;
+        color: #fff;
+        background-color: #2196f3;
+        border-radius: 20px;
+    }
+}
+
+.checklist-item {
+    .checkbox {
+        margin-right: 9px;
+        cursor: pointer;
+    }
+
+    &-txt {
+        color: #42526e;
+        font-family: roboto-normal;
+        @include trelloInput;
+        display: unset;
+        width: unset;
+        box-shadow: none;
+        background-color: inherit;
+        cursor: pointer;
+        width: 89%;
+
+        &:hover {
+            background-color: rgba(9, 30, 66, 0.04);
+        }
+
+        &:focus {
+            box-shadow: inset 0 0 0 2px #0079bf;
+            background-color: #fff;
+        }
+    }
+
+    button {
+        @include transRoundBorder;
+        background-color: inherit;
+        padding: 0px 4px 5px 4px;
+
+        &:hover {
+            background-color: rgba(9, 30, 66, 0.04);
+        }
+
+        &:hover .icon {
+            color: #172b4d;
+        }
+
+        .icon {
+            color: #42526e;
+            font-size: 18px;
+            position: relative;
+            top: 5px;
+        }
+    }
+}

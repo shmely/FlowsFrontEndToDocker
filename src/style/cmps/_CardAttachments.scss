@@ -1,0 +1,34 @@
+.attachment {
+    :hover {
+        background-color: rgba(9, 30, 66, 0.08);
+    }
+}
+.attachment-thumbnail {
+    width: 112px;
+    height: 80px;
+    color: #5e6c84;
+    margin-left: 26px;
+    margin-top: 10px;
+    margin-bottom: 2px;
+    background-color: #e1e4ea;
+    text-align: center;
+}
+.attachment-name {
+    color: #172b4d;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 700;
+    margin-top: 24px;
+    margin-left: 10px;
+}
+
+.attach-time {
+    color: #5e6c84;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    margin-left: 10px;
+}
+.file-oper {
+    text-decoration: underline;
+}

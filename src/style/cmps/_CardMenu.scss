@@ -1,0 +1,72 @@
+.screen {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, .6);
+    bottom: 0;
+    right: 0;
+}
+
+.menu-container {
+    overflow: visible;
+    position: absolute;
+    color: #fff;
+    z-index: 1;
+
+    .edit-card-form {
+        margin-right: 16px;
+
+        textarea {
+            width: 236px;
+            max-height: 150px;
+            font-family: open-sans;
+            color: #172b4d;
+            font-size: 14px;
+            @include transRoundBorder;
+            resize: none;
+            outline: none;
+            padding: 20px;
+            margin-bottom: 16px;
+        }
+
+        .save-btn {
+            color: #fff;
+            background-color: #5aac44;
+            font-size: 14px;
+            @include transRoundBorder;
+            align-self: flex-start;
+            padding: 8px 20px;
+
+            &:hover {
+                background-color: #61bd4f;
+            }
+        }
+    }
+
+    .card-menu {
+        >button {
+            @include transRoundBorder;
+            font-family: roboto-normal;
+            font-size: 14px;
+            width: max-content;
+            background-color: rgba(0, 0, 0, .6);
+            color: #e6e6e6;
+            margin-bottom: 4px;
+            padding: 6px 12px 6px 8px;
+            transition: transform 85ms ease-in;
+
+            &:hover {
+                background: rgba(0, 0, 0, .8);
+                color: #fff;
+                transform: translateX(5px);
+            }
+
+            .icon {
+                font-size: 20px;
+                margin-right: 6px;
+            }
+
+        }
+    }
+}

@@ -1,0 +1,46 @@
+.add-card {
+    font-size: rem(14px);
+    line-height: rem(20px);
+
+    .card-name-input {
+        @include trelloInput;
+        resize: none;
+        min-height: 80px;
+        max-height: 150px;
+        overflow-y: auto;
+        color: rgb(23, 43, 77);
+        box-shadow: 0 1px 0 rgba(9, 30, 66, .25);
+        margin-bottom: 12px;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .submit-btn {
+        @include transRoundBorder;
+        background-color: #5aac44;
+        color: #fff;
+        padding: 6px 12px;
+        transition: background-color 0.2s;
+        margin-right: 6px;
+
+        &:hover {
+            background-color: #61bd4f;
+        }
+    }
+
+    .close-btn {
+        @include transRoundBorder;
+        background-color: inherit;
+        color: #5e6c84;
+
+        &:hover {
+            color: rgb(23, 43, 77);
+        }
+    }
+}

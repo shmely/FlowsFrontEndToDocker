@@ -1,0 +1,119 @@
+.add-comment-btn {
+    @include transRoundBorder;
+    background-color: #5aac44;
+    color: #fff;
+    transition: background-color 0.2s;
+    margin-bottom: 16px;
+    margin-left: 52px;
+    width: 80px;
+    height: 30px;
+
+    &:hover {
+        background-color: #61bd4f;
+    }
+}
+.activity-header {
+    border-radius: 3px;
+    font-weight: 400;
+    line-height: 20px;
+    font-size: rem(14px);
+    padding-left: 4px;
+    margin-bottom: 15px;
+    .activity-icon {
+        width: 20px;
+        height: 20px;
+        border-radius: 3px;
+        margin-right: 10px;
+    }
+
+    .activity-header-text {
+        font-size: rem(14px);
+        color: #172b4d;
+        font-weight: 600;
+    }
+}
+.submit-btn {
+    @include transRoundBorder;
+    background-color: #5aac44;
+    color: #fff;
+    padding: 6px 12px;
+    transition: background-color 0.2s;
+    margin-right: 6px;
+
+    &:hover {
+        background-color: #61bd4f;
+    }
+}
+.activity {
+    a:link {
+        color: inherit;
+    }
+
+    /* visited link */
+    a:visited {
+        color: inherit;
+    }
+
+    /* mouse over link */
+    a:hover {
+        color: inherit;
+    }
+
+    /* selected link */
+    a:active {
+        color: inherit;
+    }
+    margin-bottom: 15px;
+    color: #172b4d;
+    line-height: 20px;
+    font-size: rem(14px);
+    .activity-content {
+        margin-left: 10px;
+    }
+
+    .activity-user {
+        font-weight: 700;
+    }
+    .activity-object {
+        color: #172b4d;
+        background-color: transparent;
+        text-decoration: underline;
+        font-weight: 400;
+        cursor: pointer;
+    }
+    .activity-time {
+        color: #5e6c84;
+        background-color: transparent;
+        text-decoration: none;
+        font-size: rem(12px);
+        font-weight: 400;
+    }
+}
+.comment-input {
+    @include trelloInput;
+    padding: 8px;
+    background-color: #fff;
+    box-shadow: none;
+    border: none;
+    resize: none;
+    overflow-y: auto;
+    width: 95%;
+    margin: 0 8px 20px 10px;
+    font-family: roboto-normal;
+    font-size: 14px;
+    color: #42526e;
+    transition: padding 0.4s, margin 0.4s;
+    min-height: 20px;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    &:focus {
+        box-shadow: inset 0 0 0 2px #0079bf;
+        background-color: #fff;
+        min-height: 40px;
+        outline: none;
+        padding: 8px 8px 8px 4px;
+    }
+}

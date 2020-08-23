@@ -1,0 +1,321 @@
+.card-modal {
+    overflow-y: auto;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background-color: rgba($color: #000000, $alpha: 0.7);
+
+    &::-webkit-scrollbar {
+        background-color: #d6d7e0;
+        width: rem(12px);
+        border-radius: rem(25px);
+
+        &-thumb {
+            background-color: #a4a6a8;
+            border-radius: rem(25px);
+        }
+    }
+}
+
+.card-container {
+    color: #42526e;
+    border-radius: rem(2px);
+    max-width: rem(768px);
+    border: rem(1px) solid #eeeeee;
+    background-color: $cardGrey;
+    position: absolute;
+    top: rem(50px);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    color: $trelloFontColor;
+    z-index: 2;
+
+    @include for-mobile-layout {
+        max-width: 100%;
+    }
+
+    @include for-narrow-layout {
+        max-width: 95%;
+    }
+
+    @include for-normal-layout {
+        max-width: 95%;
+    }
+
+
+    .card-img-container {
+        background-color: rgba(9, 30, 66, 0.04);
+        position: relative;
+
+        .loading-field {
+            padding-top: rem(20px);
+
+            .loader {
+                margin-bottom: rem(20px);
+            }
+
+            p {
+                margin-bottom: rem(15px);
+            }
+        }
+
+        .card-img {
+            background-position: center;
+            background-size: cover;
+            width: 35%;
+            border-left: 0.2px solid rgba(0, 0, 0, 0.315);
+            border-right: 0.2px solid rgba(0, 0, 0, 0.315);
+        }
+
+        &:hover .remove-btn {
+            opacity: 1;
+        }
+
+        .remove-btn {
+            opacity: 0;
+            border-radius: 50%;
+            border: none;
+            position: absolute;
+            margin: rem(9px) 0 0 rem(105px);
+            color: rgba(255, 255, 255, 0.678);
+            font-size: rem(14px);
+            transition: background-color 0.2s, opacity 0.2s;
+            padding: rem(6px) rem(8px);
+            background-color: rgba(230, 0, 0, 0.726);
+
+            @include for-mobile-layout {
+                opacity: 0.8;
+                color: #FFF;
+                padding: rem(3px) rem(3px);
+            }
+
+            &:hover {
+                background-color: rgb(235, 0, 0);
+                color: #fff;
+            }
+        }
+    }
+
+    .card-header {
+        padding-left: rem(16px);
+
+        .close-btn {
+            position: absolute;
+            right: rem(10px);
+            top: rem(5px);
+            background-color: inherit;
+            color: #42526e;
+            height: rem(32px);
+            width: rem(32px);
+            border: none;
+            border-radius: 50%;
+
+            .close-icon {
+                position: relative;
+                top: rem(2px);
+            }
+
+            &:hover {
+                color: #172b4d;
+                background-color: rgba(9, 30, 66, .08);
+            }
+        }
+
+        .card-header-container {
+            margin-top: rem(20px);
+
+            .icon {
+                color: #42526e;
+                font-size: rem(22px);
+                position: relative;
+                bottom: rem(13px);
+            }
+
+            .card-title {
+                color: #172b4d;
+                margin: 0 rem(36px) rem(24px) rem(8px);
+                font-weight: normal;
+                cursor: pointer;
+            }
+
+            .card-title-input {
+                resize: none;
+                width: 80%;
+                color: #172b4d;
+                border: none;
+                background-color: inherit;
+                font-family: roboto-normal;
+                margin: 0 0 rem(4px) rem(4px);
+                padding: rem(4px);
+                font-size: rem(20px);
+                height: max-content;
+                max-height: rem(300px);
+
+                &:focus {
+                    @include trelloInput;
+                    width: 80%;
+                    background-color: #fff;
+                    outline: none;
+                    margin: 0 0 rem(4px) rem(4px);
+                    padding: rem(4px);
+                }
+            }
+        }
+
+        .card-link {
+            margin: 0 0 rem(24px) rem(32px);
+            z-index: 3;
+            font-size: rem(14px);
+        }
+    }
+
+
+
+    .card-content {
+        margin-bottom: rem(150px);
+        padding-left: rem(16px);
+
+        @include for-mobile-layout {
+            flex-direction: column;
+        }
+
+        .card-details {
+            margin-right: rem(16px);
+
+            @include for-mobile-layout {
+                order: 1;
+            }
+
+            h3 {
+                color: #5e6c84;
+                letter-spacing: .04em;
+                font-weight: normal;
+                text-transform: uppercase;
+                font-size: rem(12px);
+                font-weight: 500;
+                margin-bottom: rem(8px);
+            }
+
+            &-members {
+                margin: 0 0 rem(28px) rem(28px);
+
+                .member-avatar {
+                    margin-right: rem(6px);
+                }
+            }
+
+            &-labels {
+                margin: 0 0 rem(28px) rem(28px);
+
+                .label {
+                    @include transRoundBorder;
+                    font-size: rem(14px);
+                    display: inline-block;
+                    color: #fff;
+                    min-width: rem(40px);
+                    min-height: rem(32px);
+                    padding: rem(6px) rem(12px);
+                    margin: 0 rem(4px) rem(4px) 0;
+
+                    &:hover {
+                        filter: brightness(85%);
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            &-date {
+                margin: 0 0 rem(28px) rem(28px);
+                font-family: roboto-normal;
+                font-size: rem(14px);
+                color: #172b4d;
+
+                .date {
+                    align-self: flex-start;
+                    background-color: rgba(9, 30, 66, .04);
+                    @include transRoundBorder;
+                    font-family: segoe-ui;
+                    font-size: rem(14px);
+                    cursor: pointer;
+                    height: rem(32px);
+                    max-width: max-content;
+                    padding: rem(6px) rem(12px);
+                    transition-property: background-color, border-color, box-shadow;
+                    transition-duration: 85ms;
+                    transition-timing-function: ease;
+
+                    &:hover {
+                        background-color: rgba(9, 30, 66, .08);
+                    }
+                }
+            }
+        }
+
+        .card-sidebar {
+            display: flex;
+            align-items: flex-end;
+            align-self: flex-start;
+            flex-direction: column;
+            margin-right: rem(16px);
+
+            @include for-narrow-layout {
+                margin-right: rem(12px);
+            }
+
+            @include for-mobile-layout {
+                margin-left: rem(28px);
+                order: 0;
+            }
+
+            .card-sidebar-btn {
+                background-color: rgba(9, 30, 66, 0.04);
+                @include transRoundBorder;
+                height: rem(32px);
+                font-size: rem(14px);
+                color: #42526e;
+                margin-bottom: rem(8px);
+                min-width: rem(168px);
+                overflow: hidden;
+                padding: rem(6px) rem(12px);
+                user-select: none;
+                transition-property: background-color, border-color, box-shadow;
+                transition-duration: 85ms;
+                transition-timing-function: ease;
+                display: flex;
+                align-items: center;
+
+                @include for-normal-layout {
+                    min-width: rem(168px);
+                }
+
+                @include for-narrow-layout {
+                    min-width: rem(142px);
+                }
+
+                &:hover {
+                    background-color: rgba(9, 30, 66, .08);
+                }
+
+                span {
+                    margin-right: rem(10px);
+
+                    .icon {
+                        font-size: rem(18px);
+                        position: relative;
+                        top: rem(2px);
+
+                        @include for-narrow-layout {
+                            font-size: rem(16px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+}

@@ -1,0 +1,81 @@
+.date-picker {
+    position: absolute;
+    z-index: 1;
+    color: #5e6c84;
+    background-color: #fff;
+    box-shadow: 0 0px 2px 1px rgba(9, 30, 66, 0.25);
+    @include transRoundBorder;
+    width: 250px;
+    height: 250px;
+
+    &-header {
+        border-bottom: 0.2px solid #5e6c843f;
+        font-family: roboto-light;
+        font-size: 14px;
+        margin-bottom: 12px;
+
+        p {
+            text-align: center;
+        }
+
+
+        button {
+            align-self: flex-end;
+            @include transRoundBorder;
+            background-color: inherit;
+            padding: 10px;
+
+            .icon {
+                position: relative;
+                top: 2px;
+                font-size: 16px;
+                color: #5e6c84;
+                height: 100%;
+
+                &:hover {
+                    color: #172b4d;
+                }
+            }
+        }
+    }
+
+    &-content {
+        .picker-input {
+            margin-bottom: 16px;
+
+            input {
+                text-align: center;
+                font-family: roboto-normal;
+                font-size: 14px;
+                color: #42526e;
+            }
+        }
+
+        button {
+            @include transRoundBorder;
+            font-size: 14px;
+            color: #fff;
+            transition: background-color 0.2s;
+            margin-right: 6px;
+            padding: 6px 8px;
+        }
+
+        .remove-btn {
+            margin-left: 16px;
+            background-color: #cf513d;
+
+            &:hover {
+                background-color: #eb5a46;
+            }
+        }
+
+        .save-btn {
+            margin-right: 16px;
+            background-color: #5aac44;
+
+            &:hover {
+                background-color: #61bd4f;
+            }
+        }
+    }
+}

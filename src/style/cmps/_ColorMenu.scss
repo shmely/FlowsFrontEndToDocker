@@ -1,0 +1,63 @@
+.btn-color {
+    border-radius: 8px;
+    height: 96px;
+    width: 48%;
+    margin-bottom: 8px;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.7;
+    }
+
+    .thumb {
+        height: 96px;
+        margin-bottom: 8px;
+        border-radius: 8px;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.7;
+            cursor: pointer;
+        }
+    }
+}
+
+.unsplash {
+    text-decoration: underline;
+    font-size: 1rem;
+    line-height: 20px;
+    height: 24px;
+    padding: 0 12px;
+    color: #42526e;
+    margin-bottom: 2px;
+}
+
+.btn-photo {
+    border-radius: 8px;
+    height: 96px;
+    width: 48%;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: box-shadow 0.2s, transform 0.2s, opacity 0.2s;
+    opacity: 0.8;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    .credit {
+        display: none;
+        text-decoration: underline;
+        font-size: 14px;
+        line-height: 20px;
+        height: 24px;
+        padding: 2px 12px;
+        background: rgba(0, 0, 0, 0.8);
+        color: white;
+        margin-bottom: 2px;
+    }
+
+    &:hover .credit {
+        display: block;
+    }
+}

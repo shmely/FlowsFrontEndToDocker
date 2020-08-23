@@ -1,0 +1,138 @@
+.board {
+    user-select: none;
+    flex: 1;
+
+    &-content {
+        padding-left: 4px;
+    }
+}
+
+.board-nav {
+    padding: 8px 4px 0px 14px;
+    padding-top: 7vh; //this is super important!
+    transition: padding 0.1s ease-in;
+    position: relative;
+
+    .board-title {
+        line-height: rem(32px);
+        font-size: rem(18px);
+        @include trelloInput;
+        display: unset;
+        width: max-content;
+        box-shadow: none;
+        background-color: inherit;
+        cursor: pointer;
+        font-family: roboto-bold;
+        color: #fff;
+        margin: 0;
+        padding: 0 0 4px 3px;
+
+        &:hover {
+            background-color: rgba(9, 30, 66, 0.04);
+        }
+
+        &:focus {
+            box-shadow: inset 0 0 0 2px #0079bf;
+            color: #42526e;
+            background-color: white;
+        }
+    }
+
+    .board-nav-divider {
+        float: left;
+        border-left: 1px solid hsla(0, 0%, 100%, 0.24);
+        margin: 8px 8px 12px 4px;
+        height: 16px;
+    }
+
+    .board-members {
+        float: left;
+        margin: 0 4px;
+        padding: 2px 2px 4px 2px;
+        height: 32px;
+
+        .member-avatar {
+            margin-right: 4px;
+        }
+    }
+
+    .nav-btn {
+        color: #fff;
+        height: 32px;
+        font-size: rem(14px);
+        border-radius: 3px;
+        margin: 0 5px 4px 0px;
+        padding: 6px 9px;
+        background-color: $boardBtn;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $boardBtnHov;
+        }
+
+        .nav-icon {
+            margin-right: 5px;
+        }
+    }
+
+    .search-icon {
+        position: relative;
+        font-size: 20px;
+        color: #fff;
+        top: 6px;
+        left: -25px;
+    }
+
+    .search-input-container {
+        margin-bottom: 4px;
+    }
+
+    .board-filter-input {
+        @include trelloInput;
+        width: unset;
+        font-family: roboto-normal;
+        color: rgb(55, 77, 114);
+        box-shadow: none;
+        font-size: 14px;
+        background-color: rgba(255, 255, 255, 0.24);
+        transition: 0.3s;
+        margin: 0;
+
+        &::placeholder {
+            opacity: 1;
+            color: #fff;
+        }
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.32);
+        }
+
+        &:focus {
+            background-color: #fff;
+            opacity: 1;
+
+            &::placeholder {
+                color: rgb(55, 77, 114);
+            }
+        }
+    }
+    .add-member {
+        border-radius: 50%;
+        display: inline-block;
+        position: relative;
+        color: #172b4d;
+        text-align: center;
+        min-width: 28px;
+        min-height: 28px;
+        max-width: 28px;
+        max-height: 28px;
+        background-color: #dfe1e6;
+        text-size-adjust: 100%;
+        margin-right: 5px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #c1c7d0;
+        }
+    }
+}

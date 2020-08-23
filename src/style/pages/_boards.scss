@@ -1,0 +1,80 @@
+.boards-page {
+    background-color: rgb(250, 251, 252);
+    overflow-y: auto;
+    padding-top: 6vh; //this is super important!
+
+    .boards {
+        background-color: rgb(250, 251, 252);
+        color: #314361;
+
+
+
+        .boards-title {
+            position: relative;
+            align-items: center;
+            margin-top: rem(20px);
+            margin-bottom: rem(40px);
+            margin-left: rem(40px);
+        }
+
+        .boards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            grid-gap: rem(12px);
+            padding: 0 rem(120px);
+
+
+
+            @include for-wide-layout {
+                padding: 0 rem(90px);
+            }
+
+            @include for-normal-layout {
+                padding: 0 rem(70px);
+            }
+
+            @include for-narrow-layout {
+                padding: 0 rem(32px);
+            }
+
+            @include for-mobile-layout {
+                padding: 0 rem(15px);
+            }
+        }
+
+        .board-item {
+            position: relative;
+            color: #fff;
+            font-size: rem(18px);
+            border: rem(3px) none #bbb;
+            border-radius: rem(6px);
+            min-height: rem(180px);
+            transition: 0.3s;
+            cursor: pointer;
+
+            &::before {
+                content: "";
+                transition: opacity 0.2s;
+                position: absolute;
+                border-top-left-radius: rem(6px);
+                border-top-right-radius: rem(6px);
+                top: 0;
+                right: 0;
+                left: 0;
+                bottom: rem(90px);
+                background: linear-gradient(0deg, transparent 0%, rgba(0, 0, 0, 0.493) 100%);
+                opacity: 0;
+            }
+
+            h3 {
+                margin-top: rem(6px);
+                margin-left: rem(10px);
+                position: absolute;
+            }
+        }
+
+        .board-item:hover::before {
+            opacity: 1;
+        }
+    }
+}

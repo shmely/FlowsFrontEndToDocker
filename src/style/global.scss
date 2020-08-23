@@ -1,0 +1,40 @@
+// Setup
+
+@import "basics/typography";
+@import "basics/functions";
+@import "basics//variables";
+@import "basics/mixins";
+@import "basics/helpers";
+@import "basics/base";
+@import "basics/layout";
+
+// Pages
+
+@import "pages/boards";
+@import "pages/Board";
+@import "cmps/MemberInitials";
+@import "pages/Home";
+@import "pages/Dashboard";
+@import "pages/Signin";
+@import "pages/Signup";
+
+//Components
+@import "cmps/MainNav";
+@import "cmps/Card";
+@import "cmps/cardDesc";
+@import "cmps/PhaseList";
+@import "cmps/PhasePreview";
+@import "cmps/AddCard";
+@import "cmps/CardPreview";
+@import "cmps/CardChecklist";
+@import "cmps/Labels";
+@import "cmps/LabelsEdit";
+@import "cmps/CardMenu";
+@import "cmps/boardMenu";
+@import "cmps/BackgroundMenu";
+@import "cmps/ColorMenu";
+@import "cmps/CardMembers";
+@import "cmps/Activities";
+@import "cmps/DueDateEdit";
+@import "cmps/AddLabel";
+@import "cmps/CardAttachments";

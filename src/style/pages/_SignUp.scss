@@ -1,0 +1,47 @@
+.sign-up {
+    margin-top: 6vh;
+}
+
+.sign-up-form {
+    margin: rem(40px) auto 0 auto;
+    display: grid;
+    gap: rem(40px);
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        ". user-name user-name ."
+        ". email email ."
+        ". password password ."
+        ". submit-btn submit-btn .";
+
+    @include for-mobile-layout {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "user-name"
+            "email"
+            "password"
+            "submit-btn";
+        margin: rem(40px) rem(30px) 0 rem(30px);
+    }
+}
+
+.signup-full-name {
+    grid-area: user-name;
+}
+
+.signup-email {
+    grid-area: email;
+}
+
+.signup-password {
+    grid-area: password;
+}
+
+.sign-up-submit-btn {
+    grid-area: submit-btn;
+}
+
+.sign-in-link {
+    display: block;
+    width: rem(300px);
+    margin: rem(50px) auto rem(20px) auto;
+}

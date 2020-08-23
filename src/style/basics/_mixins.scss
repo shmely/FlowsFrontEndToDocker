@@ -1,0 +1,50 @@
+@mixin trelloInput {
+    background-color: #fff;
+    border: none;
+    box-shadow: inset 0 0 0 2px #0079bf;
+    border-radius: 3px;
+    display: block;
+    margin: 0 0 4px 0;
+    transition: margin 85ms ease-in, background 85ms ease-in;
+    width: 100%;
+    padding: 8px 12px;
+}
+
+@mixin transRoundBorder {
+    border-radius: 3px;
+    border: none;
+}
+
+@mixin background($imgpath, $position: 0 0, $repeat: no-repeat) {
+    background: {
+        image: url($imgpath);
+        position: $position;
+        repeat: $repeat;
+    }
+}
+
+/* Breakpoint mixins */
+
+@mixin for-mobile-layout {
+    @media (max-width: $mobile-breakpoint + 40) {
+        @content;
+    }
+}
+
+@mixin for-narrow-layout {
+    @media (max-width: $mobile-breakpoint) {
+        @content;
+    }
+}
+
+@mixin for-normal-layout {
+    @media (max-width: $narrow-breakpoint) {
+        @content;
+    }
+}
+
+@mixin for-wide-layout {
+    @media (max-width: $normal-breakpoint) {
+        @content;
+    }
+}

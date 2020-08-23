@@ -1,0 +1,275 @@
+.main-header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background: rgba(0, 0, 0, .32);
+    min-height: 6vh; //this is super important!
+
+    .logo {
+        .btn-icon {
+            color: white;
+            width: rem(20px);
+            height: rem(20px);
+
+            @include for-mobile-layout {
+                width: rem(16px);
+                height: rem(16px);
+            }
+        }
+
+        .logo-text {
+            margin-left: rem(2px);
+            color: white;
+            font-size: rem(20px);
+            font-family: berkshireswash-regular;
+
+            @include for-mobile-layout {
+                font-size: rem(16px);
+            }
+        }
+    }
+
+    .btn-icon {
+        color: white;
+        font-size: rem(25px);
+
+        @include for-mobile-layout {
+            font-size: rem(18px);
+        }
+    }
+
+    .search-input {
+        background-color: $boardBtn;
+        border-radius: rem(3px);
+        height: rem(32px);
+        margin-left: rem(5px);
+        width: rem(180px);
+        padding-right: rem(54px);
+        border: none;
+        padding-left: rem(5px);
+
+        &:hover {
+            background-color: $boardBtnHov;
+        }
+
+        &:focus {
+            background-color: white;
+            width: rem(300px);
+        }
+    }
+
+    .search-icon {
+        color: white;
+        width: rem(20px);
+        height: rem(20px);
+        margin-left: -25px;
+    }
+
+    .btn-main-nav {
+        padding: rem(4px);
+        background-color: $boardBtn;
+        cursor: pointer;
+        border-radius: rem(3px);
+        text-align: center;
+        margin-left: rem(12px);
+
+        &:hover {
+            background-color: $boardBtnHov;
+        }
+
+        .btn-text {
+            font-size: rem(16px);
+            color: white;
+            font-weight: 700;
+            margin-left: rem(4px);
+            margin-right: rem(4px);
+
+            @include for-mobile-layout {
+                font-size: rem(14px);
+            }
+        }
+    }
+
+    .right-nav {
+        padding-right: rem(4px);
+
+        .logged-in {
+            margin: 0 rem(8px);
+
+            .member-avatar {
+                max-width: unset;
+                max-height: unset;
+                height: rem(34px);
+                width: rem(34px);
+
+                @include for-mobile-layout {
+                    height: rem(28px);
+                    width: rem(28px);
+                }
+
+                .member-initial {
+                    line-height: rem(34px);
+                    font-size: rem(15px);
+
+                    @include for-mobile-layout {
+                        line-height: rem(28px);
+                        font-size: rem(13px);
+                    }
+                }
+            }
+        }
+
+        .login-btn {
+            margin: 0 rem(12px) 0 0;
+            padding: rem(7px);
+
+            @include for-mobile-layout {
+                padding: rem(3px);
+            }
+        }
+
+        .logout-btn {
+            padding: rem(7px);
+
+            @include for-mobile-layout {
+                padding: rem(4.5px);
+            }
+        }
+    }
+
+    .create-board-menu {
+        z-index: 1000;
+        top: rem(50px);
+        right: rem(55px);
+        position: absolute;
+        width: rem(280px);
+        background-color: #fff;
+        border-radius: rem(3px);
+        padding: rem(12px);
+        box-shadow: rem(0px) rem(0px) rem(1.5px) rem(0px) rgba(0, 0, 0, 0.5);
+
+        .create-board-header {
+            position: relative;
+            height: rem(40px);
+            color: #5e6c84;
+            border-bottom: rem(1px) solid rgba(9, 30, 66, 0.13);
+            margin-bottom: rem(8px);
+
+            h5 {
+                text-align: center;
+            }
+
+            button {
+                position: absolute;
+                right: 0;
+                border: none;
+                background-color: inherit;
+            }
+        }
+
+        .create-board-btns {
+            .create-board-btn {
+                border: none;
+
+                padding: rem(6px) rem(12px);
+                text-align: start;
+                color: rgb(27, 47, 80);
+                text-align: center;
+                margin-top: rem(8px);
+                background-color: #d3dfdc;
+                transition: 0.3s;
+
+                &:hover {
+                    filter: brightness(85%);
+                }
+            }
+        }
+
+        .color-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            align-items: center;
+            justify-items: center;
+        }
+
+        .color-preview-input {
+            display: none;
+        }
+
+        .color-preview {
+            width: rem(40px);
+            height: rem(30px);
+            margin-top: rem(10px);
+            border-radius: rem(3px);
+            transition: 0.3s;
+            display: inline-block;
+
+            &.selected {
+                border: rem(2px) solid rgb(41, 40, 36);
+            }
+
+            &.green {
+                background-color: rgb(81, 152, 57);
+            }
+
+            &.orange {
+                background-color: #d29034;
+            }
+
+            &.blue {
+                background-color: rgb(0, 121, 191);
+            }
+
+            &.red {
+                background-color: rgb(176, 70, 50);
+            }
+
+            &.purple {
+                background-color: rgb(137, 96, 158);
+            }
+
+            &.pink {
+                background-color: rgb(205, 90, 145);
+            }
+
+            &.light-green {
+                background-color: rgb(75, 191, 107);
+            }
+
+            &.turquise {
+                background-color: rgb(73, 169, 215);
+            }
+        }
+
+        .color-preview:hover {
+            cursor: pointer;
+            filter: brightness(85%);
+        }
+
+        .board-name-input {
+            @include trelloInput;
+            padding: rem(8px);
+            margin-top: rem(12px);
+            box-shadow: none;
+            border: rem(1px) solid rgba(0, 0, 0, 0.363);
+
+            &:focus {
+                border: none;
+                box-shadow: inset 0 0 0rem(2px) #0079bf;
+            }
+
+        }
+
+        .close-create-board-menu {
+            cursor: pointer;
+
+            &:hover {
+                filter: brightness(45%);
+            }
+        }
+    }
+}

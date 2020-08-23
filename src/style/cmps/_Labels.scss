@@ -1,0 +1,35 @@
+.labels-container {
+    margin-bottom: 8px;
+
+    .label {
+        @include transRoundBorder;
+        font-size: rem(12px);
+        font-weight: 700;
+        margin: 3px;
+        min-width: 40px;
+        max-width: 100%;
+        padding: 0 2px;
+        text-align: center;
+        overflow: hidden;
+        min-height: 8px;
+        display: inline-block;
+        transition: width 0.5s, height 0.5s, opacity 0.5s;
+        width: 0px;
+        height: 0px;
+
+        &.shown {
+            height: 16px;
+            width: auto;
+        }
+
+        .label-txt {
+            font-family: roboto-bold;
+            padding: 1px 3px;
+            color: #fff;
+        }
+
+        &:hover {
+            filter: brightness(85%);
+        }
+    }
+}

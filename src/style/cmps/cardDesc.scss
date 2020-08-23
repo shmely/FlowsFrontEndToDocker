@@ -1,0 +1,49 @@
+.card-desc-input {
+    @include trelloInput;
+    padding: 8px;
+    background-color: $cardGrey;
+    box-shadow: none;
+    border: none;
+    resize: none;
+    overflow-y: auto;
+    width: 95%;
+    margin: 0 8px 28px 28px;
+    font-family: roboto-normal;
+    font-size: 14px;
+    color: #42526e;
+    transition: padding 0.4s, margin 0.4s;
+    min-height: 100px;
+    background-color: rgba(9, 30, 66, .04);
+
+    &:hover {
+        background-color: rgba(9, 30, 66, .08);
+    }
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    &:focus {
+        box-shadow: inset 0 0 0 2px #0079bf;
+        background-color: #fff;
+        min-height: 40px;
+        outline: none;
+        padding: 8px 8px 8px 4px;
+        margin-left: 24px;
+        min-height: 100px;
+    }
+}
+
+.desc-header-container {
+    display: flex;
+    align-items: center;
+
+    .icon {
+        font-size: 22px;
+    }
+
+    .desc-header {
+        margin-left: 5px;
+        color: #172b4d;
+    }
+}

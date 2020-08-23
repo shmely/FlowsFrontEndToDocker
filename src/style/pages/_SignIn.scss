@@ -1,0 +1,35 @@
+.sign-in {
+    margin-top: 6vh;
+}
+
+.sign-in-form {
+    margin: rem(40px) auto 0 auto;
+    display: grid;
+    gap: rem(40px);
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        ". email email ."
+        ". password password ."
+        ". submit-btn submit-btn .";
+
+    @include for-mobile-layout {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "email"
+            "password"
+            "submit-btn";
+        margin: rem(40px) rem(30px) 0 rem(30px);
+    }
+
+    .signin-email {
+        grid-area: email;
+    }
+
+    .signin-password {
+        grid-area: password;
+    }
+}
+
+.sign-in-submit-btn {
+    grid-area: submit-btn;
+}
